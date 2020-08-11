@@ -38,7 +38,8 @@ func main() {
 		for {
 			containers, err := getContainers()
 			if err != nil {
-				continue
+				panic(err)
+				// continue
 			}
 			for _, container := range containers {
 				cname := strings.Split(container.Names[0], "/")
@@ -63,6 +64,8 @@ func main() {
 							if matched {
 								return float64(1)
 							}
+						} else {
+							panic(err)
 						}
 						return float64(0)
 					},
