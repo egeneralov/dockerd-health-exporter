@@ -16,3 +16,5 @@ dockerd_container_health_test{id="c6958fb713ca2dc04ced4889591022dc67a19d57442f28
 ```
 
 ### docker hub
+
+Use `egeneralov/dockerd-health-exporter:${COMMIT_ID}`
