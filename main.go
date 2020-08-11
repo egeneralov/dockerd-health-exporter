@@ -59,13 +59,15 @@ func main() {
 						if err != nil {
 							return float64(0)
 						}
-						matched, err := regexp.MatchString(`^Up .* \((healthy)\)$`, container.Status)
+						matched, err := regexp.MatchString(`^Up .* \(healthy\)$`, container.Status)
 						if err == nil {
 							if matched {
 								return float64(1)
+							} else {
+  							return float64(0)
 							}
 						} else {
-							panic(err)
+							return float64(0)
 						}
 						return float64(0)
 					},
